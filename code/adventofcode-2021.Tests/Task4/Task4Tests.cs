@@ -1,7 +1,7 @@
-using Xunit;
 using adventofcode_2021.Task4;
 using System.Collections.Generic;
 using System.IO;
+using Xunit;
 
 namespace adventofcode_2021.Tests
 {

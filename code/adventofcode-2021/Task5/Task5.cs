@@ -20,9 +20,9 @@ namespace adventofcode_2021.Task5
 
             var first = Convert.ToInt16(
                 result.Aggregate(string.Empty, (r, x) => r + (x > input.Count / 2 ? "1" : "0")),
-                2);Convert.ToInt16(
-                result.Aggregate(string.Empty, (r, x) => r + (x > input.Count / 2 ? "1" : "0")),
-                2);
+                2); Convert.ToInt16(
+                 result.Aggregate(string.Empty, (r, x) => r + (x > input.Count / 2 ? "1" : "0")),
+                 2);
 
             // take only last 12 bits
             var inverted = ~first & 0x00000FFF;

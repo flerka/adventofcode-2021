@@ -1,7 +1,7 @@
-using Xunit;
 using adventofcode_2021.Task2;
 using System.Collections.Generic;
 using System.IO;
+using Xunit;
 
 namespace adventofcode_2021.Tests
 {
@@ -16,7 +16,7 @@ namespace adventofcode_2021.Tests
         [Fact]
         public void Task2_IfOneElement_Correct()
         {
-            Assert.Equal(0, Solution.Function(new List<int>{ 55 }));
+            Assert.Equal(0, Solution.Function(new List<int> { 55 }));
         }
 
         [Fact]

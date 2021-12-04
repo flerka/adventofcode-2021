@@ -1,9 +1,9 @@
-using Xunit;
 using adventofcode_2021.Task5;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System;
+using Xunit;
 
 namespace adventofcode_2021.Tests
 {
@@ -12,7 +12,7 @@ namespace adventofcode_2021.Tests
         [Fact]
         public void Task5_RealExample_Correct()
         {
-           Assert.Equal(4072886, Solution.Function(ReadFileAsync(Path.Combine("Task5", "Data.txt")).ToList()));
+            Assert.Equal(4072886, Solution.Function(ReadFileAsync(Path.Combine("Task5", "Data.txt")).ToList()));
         }
 
         private IEnumerable<short[]> ReadFileAsync(string fileName)

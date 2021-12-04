@@ -18,7 +18,8 @@ namespace adventofcode_2021.Task7
             {
                 var num = numbers[i];
 
-                boardsDict.Aggregate(0, (r, next) => {
+                boardsDict.Aggregate(0, (r, next) =>
+                {
                     if (next.ContainsKey(num))
                     {
                         var (i, j) = next[num];
@@ -30,7 +31,7 @@ namespace adventofcode_2021.Task7
                             winnerValue.Add(GetWinValue(resultCheck[r], num));
                         }
                     }
-                    return r+1;
+                    return r + 1;
                 });
             }
 
@@ -44,11 +45,11 @@ namespace adventofcode_2021.Task7
             {
                 for (var j = 0; j < 5; j++)
                 {
-                    if (board[i,j] != int.MaxValue)
+                    if (board[i, j] != int.MaxValue)
                     {
                         result += board[i, j];
                     }
-                } 
+                }
             }
 
             return result * winnerNumber;

@@ -1,8 +1,8 @@
-using Xunit;
 using adventofcode_2021.Task7;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Xunit;
 
 namespace adventofcode_2021.Tests
 {
@@ -22,7 +22,7 @@ namespace adventofcode_2021.Tests
             var bingoBoards = new List<int[,]>();
             var bingoBoardsDict = new List<Dictionary<int, (int, int)>>();
 
-            var skipLines = 2; 
+            var skipLines = 2;
             var bingoSize = 5;
 
             while (skipLines < lines.Length)
@@ -45,7 +45,7 @@ namespace adventofcode_2021.Tests
                      });
                     return si + 1;
                 });
-                
+
                 bingoBoards.Add(bingoItem);
                 bingoBoardsDict.Add(bingoItemDict);
                 skipLines += (bingoSize + 1);
