@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>adventofcode_2021.Tests</RootNamespace>
 
     <IsPackable>false</IsPackable>
@@ -25,6 +25,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Task10\Data.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Task9\Data.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Task8\Data.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
