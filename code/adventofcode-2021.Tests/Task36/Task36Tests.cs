@@ -1,26 +1,25 @@
-﻿using adventofcode_2021.Task35;
+﻿using adventofcode_2021.Task36;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using Xunit;
 using Xunit.Abstractions;
 
 namespace adventofcode_2022.Tests
 {
-    public class Task35Tests
+    public class Task36Tests
     {
-        public Task35Tests(ITestOutputHelper output)
+        public Task36Tests(ITestOutputHelper output)
         {
             var converter = new Converter(output);
             Console.SetOut(converter);
         }
 
         [Fact]
-        public void Task35_RealExample_Correct()
+        public void Task36_RealExample_Correct()
         {
-            Assert.Equal(3488, Solution.Function(ReadFileAsync(Path.Combine("Task35", "Data.txt"))));
+            Assert.Equal(3993, Solution.Function(ReadFileAsync(Path.Combine("Task36", "Data.txt"))));
         }
 
         private IEnumerable<string> ReadFileAsync(string fileName)

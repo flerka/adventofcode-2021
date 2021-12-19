@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace adventofcode_2021.Task35
+namespace adventofcode_2021.Task36
 {
     public class Number
     {
@@ -83,20 +83,32 @@ namespace adventofcode_2021.Task35
     public class Solution
     {
         /// <summary>
-        /// Solution for the first https://adventofcode.com/2021/day/18/ task
+        /// Solution for the second https://adventofcode.com/2021/day/18/ task
         /// </summary>
-        public static int Function(IEnumerable<string> input)
+        public static int Function(IEnumerable<string> data)
         {
-            List<Number> acc = null;
+            var input = data.ToList();
+            List<int> results = new();
             foreach (var item in input)
             {
-                var numbers = ParseNumbers(item);
-                acc = acc == null ? numbers : Reduce(Sum(acc, numbers));
+                foreach (var item2 in input)
+                {
+                    if (item == item2)
+                    {
+                        continue;
+                    }
+
+                    var numbers1 = ParseNumbers(item);
+                    var numbers2 = ParseNumbers(item2);
+                    results.Add(Reduce(Sum(numbers1, numbers2))[0].ToMagnitude());
+
+                    var numbers3 = ParseNumbers(item);
+                    var numbers4 = ParseNumbers(item2);
+                    results.Add(Reduce(Sum(numbers4, numbers3))[0].ToMagnitude());
+                }
             }
 
-            Console.WriteLine($"Final result - {acc[0].ToString()}");
-            Console.WriteLine($"Final magnitude - {acc[0].ToMagnitude()}");
-            return acc[0].ToMagnitude();
+            return results.Max();
         }
 
         public static List<Number> Sum(List<Number> first, List<Number> second)
