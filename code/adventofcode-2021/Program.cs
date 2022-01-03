@@ -1,3 +1,4 @@
 ﻿using System;
+using adventofcode_2021.Task45;
 
-Console.WriteLine("Hi");
+Solution.Function();
