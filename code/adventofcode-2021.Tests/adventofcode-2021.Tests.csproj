@@ -58,6 +58,12 @@
     <None Update="Task10\Data.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Task38\Data.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Task37\Data.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Task47\Data.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

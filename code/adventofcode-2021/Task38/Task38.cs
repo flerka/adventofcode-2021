@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace adventofcode_2021.Task37
+namespace adventofcode_2021.Task38
 {
     public struct Point : IEquatable<Point>
     {
@@ -81,7 +81,16 @@ namespace adventofcode_2021.Task37
                     unmapped.Enqueue(sector);
                 }
             }
-            return baseS.Count;
+            var res = new List<int>();
+            foreach (var item in foundS)
+            {
+                res.AddRange(foundS.Select(f => {
+                    var m = f.Minus(item);
+                    return Math.Abs(m.Z) + Math.Abs(m.Y) + Math.Abs(m.X);
+                }));
+            }
+
+            return res.Max();
         }
 
         private static Transform? GetTransformIfIntersect(HashSet<Point> left, HashSet<Point> right)
