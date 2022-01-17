@@ -6,10 +6,69 @@ namespace adventofcode_2021.Task45
 {
     public class Solution
     {
-        public struct Burrow
+        public struct Burrow : IEquatable<Burrow>
         {
             public List<char> Hall { get; set; }
             public List<List<char>> Rooms { get; set; } = new();
+
+            public override bool Equals(object p)
+            {
+                return Equals((Burrow)p);
+            }
+
+            public bool Equals(Burrow p)
+            {
+                Burrow b2 = (Burrow)p;
+
+                if (b2.Rooms.Count != Rooms.Count ||
+                    b2.Hall.Count != Hall.Count)
+                {
+                    return false;
+                }
+
+                for (int i = 0; i < Hall.Count; i++)
+                {
+                    if (b2.Hall[i] != Hall[i])
+                    {
+                        return false;
+                    }
+                }
+
+                for (int i = 0; i < Rooms.Count; i++)
+                {
+                    for (int k = 0; k < Rooms[i].Count; k++)
+                    {
+                        if (b2.Rooms[i][k] != Rooms[i][k])
+                        {
+                            return false;
+                        }
+                    }
+                }
+
+                return true;
+            }
+
+            public override int GetHashCode()
+            {
+                unchecked
+                {
+                    int hash = 19;
+                    foreach (var foo in Hall)
+                    {
+                        hash = hash * 31 + foo.GetHashCode();
+                    }
+
+                    foreach (var room in Rooms)
+                    {
+                        foreach (var s in room)
+                        {
+                            hash = hash * 31 + s.GetHashCode();
+                        }
+                    }
+                    return hash;
+                }
+            }
+
         }
 
         private struct Move
@@ -28,25 +87,26 @@ namespace adventofcode_2021.Task45
 
             }
 
-            // todo add cache
-            //res, found:= cache[data]
-
-            //if found {
-            //            return res
-            //}
+            if (cache.ContainsKey(data))
+            {
+                return cache[data];
+            }
 
             var best = double.PositiveInfinity;
-
-
             var moves = getValidMoves(data);
 
             foreach (var move in moves)
             {
                 var cost = move.TotalCost;
-                var result = solve(move.StateAfterMove);
+                var a = new Burrow
+                {
+                    Hall = move.StateAfterMove.Hall.Select(i => i).ToList(),
+                    Rooms = move.StateAfterMove.Rooms.Select(i => i.Select(k => k).ToList()).ToList()
+                };
+                var result = solve(a);
 
                 // todo add cache
-                // cache[move.StateAfterMove] = result
+                cache[move.StateAfterMove] = result;
 
                 cost += result;
 
@@ -103,7 +163,7 @@ namespace adventofcode_2021.Task45
 
             return (end - start + (depth + 1)) * AmphipodsEnergy[r];
         }
-
+        private static Dictionary<Burrow, double> cache = new();
         private static List<Move> getValidMovesFromHall(Burrow data)
         {
             try
@@ -124,10 +184,6 @@ namespace adventofcode_2021.Task45
                     var depth = RoomSize - 1;
                     while (depth >= 0)
                     {
-                        if (depth > 1 || depth < 0)
-                        {
-                            var a = 0;
-                        }
                         if (room[depth] == pod)
                         {
                             depth--;
@@ -139,7 +195,7 @@ namespace adventofcode_2021.Task45
                             break;
                         }
 
-                        depth += -1;
+                        depth = -1;
                     }
 
                     // cannot move if other types of amphipod present in room
@@ -220,7 +276,7 @@ namespace adventofcode_2021.Task45
                     continue;
                 }
 
-                for (int h = 0; h < data.Hall.Count; h ++)
+                for (int h = 0; h < data.Hall.Count; h++)
                 {
                     if (!EnterableHallCell(h) || data.Hall[h] != EmptyChar)
                     {
@@ -240,7 +296,7 @@ namespace adventofcode_2021.Task45
                     {
                         Hall = data.Hall.Select(i => i).ToList(),
                         Rooms = data.Rooms.Select(i => i.Select(k => k).ToList()).ToList()
-                    }; 
+                    };
 
                     clone.Hall[h] = clone.Rooms[i][j];
                     clone.Rooms[i][j] = EmptyChar;
@@ -295,7 +351,6 @@ namespace adventofcode_2021.Task45
                 c++;
             }
 
-
             return true;
         }
 
@@ -306,7 +361,7 @@ namespace adventofcode_2021.Task45
 
         private static bool EnterableHallCell(int i) => !(i % 2 == 0 && i != 0 && i != HallSize - 1);
 
-        private static int RoomSize = 2;
+        private static int RoomSize = 4;
         private const char EmptyChar = '.';
         private static int HallSize = 11;
 
@@ -319,10 +374,10 @@ namespace adventofcode_2021.Task45
             {
                 Hall = Enumerable.Range(0, 11).Select(_ => EmptyChar).ToList(),
                 Rooms = new List<List<char>> {
-                    new List<char> { 'B', 'A' },
-                    new List<char> { 'C', 'D' },
-                    new List<char> { 'B', 'C' },
-                    new List<char> { 'D', 'A' }
+                    new List<char> { 'D', 'D', 'D', 'D' },
+                    new List<char> { 'C', 'C', 'B','A' },
+                    new List<char> { 'B', 'B', 'A', 'A' },
+                    new List<char> { 'C', 'A', 'C','B' }
                 }
             };
 
