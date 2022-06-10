@@ -38,7 +38,7 @@ You can find input data files and input parsers code in [adventofcode-2021.Tests
 | day 22 | [solution](./code/adventofcode-2021/Task43/Task43.cs), [test runner](./code/adventofcode-2021.Tests/Task43/Task43Tests.cs) | [solution](./code/adventofcode-2021/Task44/Task44.cs), [test runner](./code/adventofcode-2021.Tests/Task44/Task44Tests.cs) |
 | day 23 | [solution](./code/adventofcode-2021/Task45/Task45.cs), [test runner](./code/adventofcode-2021.Tests/Task45/Task45Tests.cs) | [solution](./code/adventofcode-2021/Task45/Task45.cs), [test runner](./code/adventofcode-2021.Tests/Task45/Task45Tests.cs) |
 | day 24 | [solution](./code/adventofcode-2021/Task47/Task47.cs), [test runner](./code/adventofcode-2021.Tests/Task47/Task47Tests.cs) | [solution](./code/adventofcode-2021/Task47/Task47.cs), [test runner](./code/adventofcode-2021.Tests/Task47/Task47Tests.cs) |
-| day 25 | [solution](./code/adventofcode-2021/Task49/Task49.cs), [test runner](./code/adventofcode-2021.Tests/Task49/Task49Tests.cs) ||
+| day 25 | [solution](./code/adventofcode-2021/Task49/Task49.cs), [test runner](./code/adventofcode-2021.Tests/Task49/Task49Tests.cs) | [solution](./code/adventofcode-2021/Task49/Task49.cs), [test runner](./code/adventofcode-2021.Tests/Task49/Task49Tests.cs) |
 
 ## How to run
 1) Install .Net Core 6.
@@ -51,3 +51,6 @@ You can find input data files and input parsers code in [adventofcode-2021.Tests
 
 ## My stats
 ![main](https://raw.githubusercontent.com/flerka/adventofcode-2021/master/.github/img/1.png)
+
+## Disclaimer
+I implemented each solution the same day it was published and haven't done any refactoring afterward (except minor cleanup and warning fixes), so sometimes the code may be a bit straightforward.
