@@ -10,6 +10,11 @@ I made a point not to share any code between parts one and two. I tried to use n
 ![main](https://raw.githubusercontent.com/flerka/adventofcode-2021/master/.github/img/1.png)
 
 ## Navigation
+In project [adventofcode-2021](./code/adventofcode-2021) you can find solution algorithms and in [adventofcode-2021.Tests](./code/adventofcode-2021.Tests) you can find tests that run said solutions. I store the first and the second parts in different folders. The same structure applies to both projects.
+
+You can find input data files and input parsers can in [adventofcode-2021.Tests](./code/adventofcode-2021.Tests) project. To use your input data instead of mine, you should update the data file you can find in the same folder as a test runner. For example - [data file for day one part one](./code/adventofcode-2021.Tests/Task1/Data.txt).
+
+
 |                                                | part 1                              | part 2                              |
 |:-----------------------------------------------|:------------------------------------|:------------------------------------|
 | day 1 | [solution](./code/adventofcode-2021/Task1/Task1.cs), [test runner](./code/adventofcode-2021.Tests/Task1/Task1Tests.cs) | [solution](./code/adventofcode-2021/Task2/Task2.cs), [test runner](./code/adventofcode-2021.Tests/Task2/Task2Tests.cs) |
