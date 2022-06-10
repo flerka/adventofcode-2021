@@ -47,7 +47,7 @@ You can find input data files and input parsers code in [adventofcode-2021.Tests
 
     `dotnet test --filter "DisplayName~Task1_"`
 
-    *Task1_* should be replaced with task number you want to run.
+    *Task1_* should be replaced with task number you want to run (*to get the task number click on the solution link in the table above*).
 
 ## My stats
 ![main](https://raw.githubusercontent.com/flerka/adventofcode-2021/master/.github/img/1.png)
