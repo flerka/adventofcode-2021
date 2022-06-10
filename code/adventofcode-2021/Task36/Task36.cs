@@ -74,9 +74,9 @@ namespace adventofcode_2021.Task36
 
         }
 
-        public Number? LeftChild { get; set; }
-        public Number? RightChild { get; set; }
-        public Number? Parent { get; set; }
+        public Number LeftChild { get; set; }
+        public Number RightChild { get; set; }
+        public Number Parent { get; set; }
 
     }
 
@@ -209,8 +209,6 @@ namespace adventofcode_2021.Task36
 
             Console.WriteLine($"exploded:{newList[0].ToString()}");
             return (newList, true);
-
-            return (numbers, false);
         }
 
         private static void PropagateLeft(Number value)
@@ -277,7 +275,7 @@ namespace adventofcode_2021.Task36
             }
         }
 
-        private static Number? FindRightmostVal(Number root)
+        private static Number FindRightmostVal(Number root)
         {
             var s = new Stack<Number>();
             s.Push(root);
@@ -318,7 +316,7 @@ namespace adventofcode_2021.Task36
             return null;
         }
 
-        private static Number? FindLeftmostVal(Number root)
+        private static Number FindLeftmostVal(Number root)
         {
             var s = new Stack<Number>();
             s.Push(root);
@@ -359,7 +357,7 @@ namespace adventofcode_2021.Task36
             return null;
         }
 
-        private static Number? FindLeftmostAbove9(Number root)
+        private static Number FindLeftmostAbove9(Number root)
         {
             var s = new Stack<Number>();
             s.Push(root);
@@ -403,7 +401,7 @@ namespace adventofcode_2021.Task36
             return null;
         }
 
-        private static Number? FindLeftmostWithDepth(Number root)
+        private static Number FindLeftmostWithDepth(Number root)
         {
             var s = new Stack<Number>();
             s.Push(root);

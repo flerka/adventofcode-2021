@@ -6,7 +6,7 @@ using System.Text;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace adventofcode_2022.Tests
+namespace adventofcode_2021.Tests
 {
     public class Task42Tests
     {
@@ -15,9 +15,9 @@ namespace adventofcode_2022.Tests
         }
 
         [Fact]
-        public void Task41_RealExample_Correct()
+        public void Task42_RealExample_Correct()
         {
-            Assert.Equal(444356092776315UL, Solution.Function(10UL, 1UL));
+            Assert.Equal(56852759190649UL, Solution.Function(10UL, 1UL));
         }
     }
 }

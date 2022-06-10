@@ -7,7 +7,7 @@ using System.Text;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace adventofcode_2022.Tests
+namespace adventofcode_2021.Tests
 {
     public class Task38Tests
     {

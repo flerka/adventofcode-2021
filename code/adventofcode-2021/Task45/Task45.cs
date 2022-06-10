@@ -8,7 +8,11 @@ namespace adventofcode_2021.Task45
     {
         public struct Burrow : IEquatable<Burrow>
         {
-            public List<char> Hall { get; set; }
+            public Burrow()
+            {
+            }
+
+            public List<char> Hall { get; set; } = new();
             public List<List<char>> Rooms { get; set; } = new();
 
             public override bool Equals(object p)
@@ -79,9 +83,9 @@ namespace adventofcode_2021.Task45
         }
 
 
-        private static double solve(Burrow data)
+        private static double Solve(Burrow data)
         {
-            if (done(data.Rooms))
+            if (Done(data.Rooms))
             {
                 return 0;
 
@@ -93,7 +97,7 @@ namespace adventofcode_2021.Task45
             }
 
             var best = double.PositiveInfinity;
-            var moves = getValidMoves(data);
+            var moves = GetValidMoves(data);
 
             foreach (var move in moves)
             {
@@ -103,7 +107,7 @@ namespace adventofcode_2021.Task45
                     Hall = move.StateAfterMove.Hall.Select(i => i).ToList(),
                     Rooms = move.StateAfterMove.Rooms.Select(i => i.Select(k => k).ToList()).ToList()
                 };
-                var result = solve(a);
+                var result = Solve(a);
 
                 // todo add cache
                 cache[move.StateAfterMove] = result;
@@ -121,10 +125,10 @@ namespace adventofcode_2021.Task45
             return best;
         }
 
-        private static double getMoveCost(int hall, int room, int depth, Burrow burrow, char r)
+        private static double GetMoveCost(int hall, int room, int depth, Burrow burrow, char r)
         {
-            int start = 0;
-            int end = 0;
+            int start;
+            int end;
             var moveRight = true;
 
             if (hall < 2 * (room + 1))
@@ -163,8 +167,8 @@ namespace adventofcode_2021.Task45
 
             return (end - start + (depth + 1)) * AmphipodsEnergy[r];
         }
-        private static Dictionary<Burrow, double> cache = new();
-        private static List<Move> getValidMovesFromHall(Burrow data)
+        private static readonly Dictionary<Burrow, double> cache = new();
+        private static List<Move> GetValidMovesFromHall(Burrow data)
         {
             try
             {
@@ -204,7 +208,7 @@ namespace adventofcode_2021.Task45
                         continue;
                     }
 
-                    var cost = getMoveCost(i, roomNum, depth, data, pod);
+                    var cost = GetMoveCost(i, roomNum, depth, data, pod);
 
                     // no path or no place in room
 
@@ -229,13 +233,13 @@ namespace adventofcode_2021.Task45
 
                 return movesFromHall;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
         }
 
-        private static List<Move> getValidMovesFromRoom(Burrow data)
+        private static List<Move> GetValidMovesFromRoom(Burrow data)
         {
             List<Move> movesFromRoom = new();
 
@@ -283,7 +287,7 @@ namespace adventofcode_2021.Task45
                         continue;
                     }
 
-                    var cost = getMoveCost(h, i, j, data, room[j]);
+                    var cost = GetMoveCost(h, i, j, data, room[j]);
 
                     // no path or no place in cell
                     if (double.IsPositiveInfinity(cost))
@@ -312,11 +316,11 @@ namespace adventofcode_2021.Task45
             return movesFromRoom;
         }
 
-        private static List<Move> getValidMoves(Burrow data)
+        private static List<Move> GetValidMoves(Burrow data)
         {
-            var movesFromHall = getValidMovesFromHall(data);
+            var movesFromHall = GetValidMovesFromHall(data);
 
-            var movesFromRoom = getValidMovesFromRoom(data);
+            var movesFromRoom = GetValidMovesFromRoom(data);
             movesFromHall.AddRange(movesFromRoom);
 
             return movesFromHall;
@@ -333,7 +337,7 @@ namespace adventofcode_2021.Task45
             return (char)('A' + (char)room);
         }
 
-        private static bool done(List<List<char>> rooms)
+        private static bool Done(List<List<char>> rooms)
         {
             var c = 'A';
             foreach (var room in rooms)
@@ -354,16 +358,17 @@ namespace adventofcode_2021.Task45
             return true;
         }
 
-        private static readonly Dictionary<char, int> AmphipodsEnergy = new Dictionary<char, int>
+        private static readonly Dictionary<char, int> AmphipodsEnergy = new()
         {
            {'A', 1 }, {'B', 10}, {'C', 100}, {'D', 1000}
         };
 
         private static bool EnterableHallCell(int i) => !(i % 2 == 0 && i != 0 && i != HallSize - 1);
 
-        private static int RoomSize = 4;
+        private static readonly int RoomSize = 4;
+        private static readonly int HallSize = 11;
+
         private const char EmptyChar = '.';
-        private static int HallSize = 11;
 
         /// <summary>
         /// Solution for the first https://adventofcode.com/2021/day/23/ task.
@@ -381,7 +386,7 @@ namespace adventofcode_2021.Task45
                 }
             };
 
-            var result = solve(b);
+            var result = Solve(b);
             return Convert.ToInt32(result);
         }
 

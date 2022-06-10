@@ -7,14 +7,14 @@ using System.Text;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace adventofcode_2022.Tests
+namespace adventofcode_2021.Tests
 {
     public class Task45Tests
     {
         [Fact]
         public void Task45_RealExample_Correct()
         {
-            Assert.Equal(12521, Solution.Function());
+            Assert.Equal(48541, Solution.Function());
         }
     }
 }

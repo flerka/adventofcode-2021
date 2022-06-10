@@ -54,14 +54,14 @@ namespace adventofcode_2021.Task26
 
         private static void OutputResult(Dictionary<(int x, int y), bool> result)
         {
-            (int x, int y) size = (result.Keys.Max(i => i.x), result.Keys.Max(i => i.y));
-            for (int i = 0; i <= size.y; i++)
+            (int x, int y) = (result.Keys.Max(i => i.x), result.Keys.Max(i => i.y));
+            for (int i = 0; i <= y; i++)
             {
 
-                for (int k = 0; k <= size.x; k++)
+                for (int k = 0; k <= x; k++)
                 {
                     var text = result.ContainsKey((k, i)) ? "*" : ".";
-                    Console.Write(text);
+                    Console.WriteLine(text);
                 }
                 Console.WriteLine();
             }

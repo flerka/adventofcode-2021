@@ -93,7 +93,7 @@ namespace adventofcode_2021.Task38
             return res.Max();
         }
 
-        private static Transform? GetTransformIfIntersect(HashSet<Point> left, HashSet<Point> right)
+        private static Transform GetTransformIfIntersect(HashSet<Point> left, HashSet<Point> right)
         {
             for (var i = 0; i < 24; i++)
             {
@@ -152,6 +152,7 @@ namespace adventofcode_2021.Task38
                 21 => new Point(-z, y, x),
                 22 => new Point(-z, -x, y),
                 23 => new Point(-z, -y, -x),
+                _ => throw new Exception("Unsupported input")
             };
         }
     }

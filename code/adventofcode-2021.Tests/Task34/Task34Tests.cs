@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using Xunit;
 
-namespace adventofcode_2022.Tests
+namespace adventofcode_2021.Tests
 {
     public class Task34Tests
     {

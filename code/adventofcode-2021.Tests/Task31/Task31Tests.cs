@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using Xunit;
 
-namespace adventofcode_2022.Tests
+namespace adventofcode_2021.Tests
 {
     public class Task31Tests
     {
@@ -35,7 +35,8 @@ namespace adventofcode_2022.Tests
                     'C' => "1100",
                     'D' => "1101",
                     'E' => "1110",
-                    'F' => "1111"
+                    'F' => "1111",
+                    _ => throw new Exception("Unsupported input")
                 };
             }).ToList();
             return String.Join(string.Empty, strings);

@@ -7,11 +7,11 @@ using System.Text;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace adventofcode_2022.Tests
+namespace adventofcode_2021.Tests
 {
     public class Task47Tests
     {
-        [Fact]
+        [Fact(Skip = "this test runs more then 1 minute")]
         public void Task47_RealExample_Correct()
         {
             Assert.Equal(3UL, Solution.Function());

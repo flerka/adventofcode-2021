@@ -3,17 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Linq;
 using Xunit;
 
-namespace adventofcode_2022.Tests
+namespace adventofcode_2021.Tests
 {
     public class Task43Tests
     {
         [Fact]
         public void Task43_RealExample_Correct()
         {
-            Assert.Equal(590784, Solution.Function(ReadFileAsync(Path.Combine("Task43", "Data.txt"))));
+            Assert.Equal(2132537931, Solution.Function(ReadFileAsync(Path.Combine("Task43", "Data.txt"))));
         }
 
         private IEnumerable<Cuboid> ReadFileAsync(string fileName)
