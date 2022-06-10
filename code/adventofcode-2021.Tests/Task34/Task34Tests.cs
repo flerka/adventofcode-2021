@@ -1,5 +1,4 @@
 ﻿using adventofcode_2021.Task34;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

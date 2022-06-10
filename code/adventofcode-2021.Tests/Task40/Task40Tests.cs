@@ -46,8 +46,8 @@ namespace adventofcode_2021.Tests
                 result.Add($"{dots}{line}{dots}");
             }
 
-            var resultWithBorder = new List<string> ();
-            for (int i = 0; i < 100; i++) 
+            var resultWithBorder = new List<string>();
+            for (int i = 0; i < 100; i++)
             {
                 resultWithBorder.Add(new string('.', result[0].Length));
             }

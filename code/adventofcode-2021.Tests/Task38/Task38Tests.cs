@@ -1,11 +1,8 @@
 ﻿using adventofcode_2021.Task38;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace adventofcode_2021.Tests
 {
@@ -34,11 +31,11 @@ namespace adventofcode_2021.Tests
                 else if (!string.IsNullOrEmpty(line))
                 {
                     var n = line.Split(',').Select(x => int.Parse(x)).ToList();
-                    currentPoints.Add(new Point (n[0], n[1], n[2]));
+                    currentPoints.Add(new Point(n[0], n[1], n[2]));
                 }
             }
 
-            result.Add (currentPoints);
+            result.Add(currentPoints);
             return result;
         }
     }

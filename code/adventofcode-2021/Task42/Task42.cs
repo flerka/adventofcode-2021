@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace adventofcode_2021.Task42
 {
@@ -58,7 +56,7 @@ namespace adventofcode_2021.Task42
             foreach (var map in ValuesMap.Keys)
             {
                 var res = Calc(val, map);
-                wins.firstWinds += (res.firstWins * (ulong) ValuesMap[map]);
+                wins.firstWinds += (res.firstWins * (ulong)ValuesMap[map]);
                 wins.secondWinds += (res.secondWinds * (ulong)ValuesMap[map]);
             }
 

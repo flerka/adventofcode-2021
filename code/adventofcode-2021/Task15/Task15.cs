@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace adventofcode_2021.Task15
 {
@@ -12,9 +10,9 @@ namespace adventofcode_2021.Task15
         public static int Function(IEnumerable<(List<string> alphabet, List<string> numbers)> items)
         {
             var result = 0;
-            foreach(var pair in items)
+            foreach (var pair in items)
             {
-                foreach(var number in pair.numbers)
+                foreach (var number in pair.numbers)
                 {
                     result += number.Length switch
                     {

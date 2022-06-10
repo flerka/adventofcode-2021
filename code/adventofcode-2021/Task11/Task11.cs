@@ -21,7 +21,7 @@ namespace adventofcode_2021.Task11
 
                 for (int j = 1; j <= 8; j++)
                 {
-                    data[j - 1] = data[j];        
+                    data[j - 1] = data[j];
                 }
 
                 data[6] += toProduceNew;

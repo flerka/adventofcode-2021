@@ -30,7 +30,7 @@ namespace adventofcode_2021.Task37
 
         public override int GetHashCode()
         {
-            return X*31 + Y * 17 + Z;
+            return X * 31 + Y * 17 + Z;
         }
 
         public Point Sum(Point p2)

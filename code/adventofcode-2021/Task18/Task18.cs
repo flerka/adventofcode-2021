@@ -33,7 +33,7 @@ namespace adventofcode_2021.Task18
             {
                 basin.Add(point);
             }
-            
+
             foreach (var neighbor in neighBors)
             {
                 if (!basin.Contains(neighbor))

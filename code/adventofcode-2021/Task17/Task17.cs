@@ -21,10 +21,10 @@ namespace adventofcode_2021.Task17
                 return index1 + 1;
             });
 
-            return data.Keys.Where(key => 
+            return data.Keys.Where(key =>
                 (!data.ContainsKey((key.i - 1, key.j)) || data[(key.i - 1, key.j)] > data[key]) &&
                 (!data.ContainsKey((key.i + 1, key.j)) || data[(key.i + 1, key.j)] > data[key]) &&
-                (!data.ContainsKey((key.i, key.j -1 )) || data[(key.i, key.j - 1)] > data[key]) &&
+                (!data.ContainsKey((key.i, key.j - 1)) || data[(key.i, key.j - 1)] > data[key]) &&
                 (!data.ContainsKey((key.i, key.j + 1)) || data[(key.i, key.j + 1)] > data[key]))
                 .Sum(key => data[key] + 1);
 

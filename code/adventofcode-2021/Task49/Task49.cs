@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 
 namespace adventofcode_2021.Task49
 {
@@ -14,7 +12,7 @@ namespace adventofcode_2021.Task49
         {
             var count = 1;
             var data = input;
-            while(true)
+            while (true)
             {
                 var resR = MoveRight(data);
                 data = resR.newList;

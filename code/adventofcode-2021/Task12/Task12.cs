@@ -19,7 +19,7 @@ namespace adventofcode_2021.Task12
 
                 for (long j = 1; j <= 8; j++)
                 {
-                    data[(long)(j - 1)] = data[j];        
+                    data[(long)(j - 1)] = data[j];
                 }
 
                 data[6] += toProduceNew;

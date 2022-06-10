@@ -39,7 +39,7 @@ namespace adventofcode_2021.Task10
             return board.Where(item => item != null).Sum(item => item.Count(item2 => item2 >= 2));
         }
 
-        private static void PerformHorizontal((Point start, Point end) pointPair, int [][] board, int boardSize)
+        private static void PerformHorizontal((Point start, Point end) pointPair, int[][] board, int boardSize)
         {
             for (var i = pointPair.start.x; i <= pointPair.end.x; i++)
             {
@@ -66,7 +66,7 @@ namespace adventofcode_2021.Task10
                     board[i][j]++;
                 }
             }
-            if (pointPair.end.x > pointPair.start.x && pointPair.end.y < pointPair.start.y) 
+            if (pointPair.end.x > pointPair.start.x && pointPair.end.y < pointPair.start.y)
             {
                 for (int i = pointPair.start.x, j = pointPair.start.y; i <= pointPair.end.x; i++, j--)
                 {
@@ -74,7 +74,7 @@ namespace adventofcode_2021.Task10
                     board[i][j]++;
                 }
             }
-            if (pointPair.end.x < pointPair.start.x && pointPair.end.y > pointPair.start.y) 
+            if (pointPair.end.x < pointPair.start.x && pointPair.end.y > pointPair.start.y)
             {
                 for (int i = pointPair.start.x, j = pointPair.start.y; i >= pointPair.end.x; i--, j++)
                 {

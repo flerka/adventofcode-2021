@@ -30,7 +30,7 @@ namespace adventofcode_2021.Task38
 
         public override int GetHashCode()
         {
-            return X*31 + Y * 17 + Z;
+            return X * 31 + Y * 17 + Z;
         }
 
         public Point Sum(Point p2)
@@ -84,7 +84,8 @@ namespace adventofcode_2021.Task38
             var res = new List<int>();
             foreach (var item in foundS)
             {
-                res.AddRange(foundS.Select(f => {
+                res.AddRange(foundS.Select(f =>
+                {
                     var m = f.Minus(item);
                     return Math.Abs(m.Z) + Math.Abs(m.Y) + Math.Abs(m.X);
                 }));

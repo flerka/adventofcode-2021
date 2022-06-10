@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace adventofcode_2021.Task44
 {
@@ -12,7 +11,7 @@ namespace adventofcode_2021.Task44
     {
         private static long Run(List<InputData> data)
         {
-            var cubes  = new List<InputData>();
+            var cubes = new List<InputData>();
             var newCubes = new List<InputData>(cubes);
 
             for (var i = 0; i < data.Count; i++)
@@ -68,9 +67,9 @@ namespace adventofcode_2021.Task44
                 }
                 cubes = new List<InputData>(newCubes);
             }
-            
+
             var onCount = 0L;
-            foreach(var cube in cubes)
+            foreach (var cube in cubes)
             {
                 onCount += (cube.vx - cube.ux + 1L) * (cube.vy - cube.uy + 1L) * (cube.vz - cube.uz + 1L);
             }

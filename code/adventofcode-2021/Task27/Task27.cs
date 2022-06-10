@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace adventofcode_2021.Task27
@@ -14,7 +13,7 @@ namespace adventofcode_2021.Task27
             var pairsCount = GetPairOccurances(data.start);
             var pattern = data.pattern.ToDictionary(x => x.Item1, x => x.Item2);
             Dictionary<string, int> byLetter = new();
-            foreach(var ch in data.start)
+            foreach (var ch in data.start)
             {
                 byLetter[ch.ToString()] = byLetter.ContainsKey(ch.ToString()) ? (byLetter[ch.ToString()] + 1) : 1; ;
             }
@@ -30,7 +29,7 @@ namespace adventofcode_2021.Task27
                         {
                             pairsCount[pair]--;
                             var patternItem = pattern[pair];
-                            
+
                             newPairs.Add(string.Join(string.Empty, pair[0], patternItem));
                             newPairs.Add(string.Join(string.Empty, patternItem, pair[1]));
 

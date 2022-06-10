@@ -1,7 +1,6 @@
 ﻿using adventofcode_2021.Task23;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Xunit;
 
 namespace adventofcode_2021.Tests

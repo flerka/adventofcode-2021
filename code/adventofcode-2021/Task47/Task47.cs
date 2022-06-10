@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace adventofcode_2021.Task47
 {
@@ -33,7 +30,7 @@ namespace adventofcode_2021.Task47
                 { 13, (-9, 10, 26) }
             };
 
-            List <Dictionary<(int x, int y, int z, int w), (int x, int y, int z, int w)>> cache = new() {
+            List<Dictionary<(int x, int y, int z, int w), (int x, int y, int z, int w)>> cache = new() {
                 new(), new(), new(), new(), new(), new(), new(), new(), new(), new(), new(), new(), new(), new() };
 
             for (ulong val = 99999999999999; val >= 11111111111111; val--)
@@ -54,7 +51,7 @@ namespace adventofcode_2021.Task47
                     }
                     else
                     {
-                        var res = Solve( variables, constsDict[i]);
+                        var res = Solve(variables, constsDict[i]);
                         cache[i][variables] = res;
 
                         if (res.z == 0)

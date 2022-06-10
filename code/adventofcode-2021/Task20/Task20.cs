@@ -14,12 +14,12 @@ namespace adventofcode_2021.Task20
             { ['('] = 1, ['['] = 2, ['{'] = 3, ['<'] = 4 };
 
             var results = new List<long>();
-            foreach(var item in input)
+            foreach (var item in input)
             {
                 var result = GetUnclosed(item);
                 if (result != null)
                 {
-                    results.Add(result.Aggregate(0L, (res, c) =>  (5L * res) + closingScored[c]));
+                    results.Add(result.Aggregate(0L, (res, c) => (5L * res) + closingScored[c]));
                 }
             }
 

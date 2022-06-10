@@ -38,9 +38,9 @@ namespace adventofcode_2021.Tests
                 result.Add(new List<int>(items[i]));
             }
 
-            for (int i = 0;i < result.Count; i++)
+            for (int i = 0; i < result.Count; i++)
             {
-                for(int j = 0; j < result.Count; j++)
+                for (int j = 0; j < result.Count; j++)
                 {
                     var number = (result[i][j] + i / count + j / count);
                     result[i][j] = number > 9 ? number % 9 : number;

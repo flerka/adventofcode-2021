@@ -80,9 +80,9 @@ namespace adventofcode_2021.Task43
                 if (item.op)
                 {
                     newCubes.Add(new Cuboid(
-                        true, Math.Min(item.lowerX, item.upperX), 
+                        true, Math.Min(item.lowerX, item.upperX),
                         Math.Max(item.lowerX, item.upperX), Math.Min(item.lowerY, item.upperY),
-                        Math.Max(item.lowerY, item.upperY), Math.Min(item.lowerZ, item.upperZ), 
+                        Math.Max(item.lowerY, item.upperY), Math.Min(item.lowerZ, item.upperZ),
                         Math.Max(item.lowerZ, item.upperZ)));
                 }
                 cubes = new List<Cuboid>(newCubes);

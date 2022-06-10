@@ -1,11 +1,5 @@
 ﻿using adventofcode_2021.Task47;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace adventofcode_2021.Tests
 {

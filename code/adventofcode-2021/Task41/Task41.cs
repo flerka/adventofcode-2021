@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace adventofcode_2021.Task41
+﻿namespace adventofcode_2021.Task41
 {
     public class Solution
     {

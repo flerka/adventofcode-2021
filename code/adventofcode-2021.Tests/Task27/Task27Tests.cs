@@ -19,7 +19,7 @@ namespace adventofcode_2021.Tests
             var text = File.ReadAllLines(file);
             var start = text.First();
 
-            var pattern = text.Skip(2).Select(item => 
+            var pattern = text.Skip(2).Select(item =>
             {
                 var items = item.Split(" -> ");
                 return (items[0], items[1]);
