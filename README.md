@@ -6,13 +6,10 @@ I tried solving all tasks using only .Net 6 without external libraries. You can 
 
 I made a point not to share any code between parts one and two. I tried to use new language features and a more functional approach, but with later tasks I wasn't always successful in it.
 
-## My stats
-![main](https://raw.githubusercontent.com/flerka/adventofcode-2021/master/.github/img/1.png)
-
 ## Navigation
 In project [adventofcode-2021](./code/adventofcode-2021) you can find solution algorithms and in [adventofcode-2021.Tests](./code/adventofcode-2021.Tests) you can find tests that run said solutions. I store the first and the second parts in different folders. The same structure applies to both projects.
 
-You can find input data files and input parsers can in [adventofcode-2021.Tests](./code/adventofcode-2021.Tests) project. To use your input data instead of mine, you should update the data file you can find in the same folder as a test runner. For example - [data file for day one part one](./code/adventofcode-2021.Tests/Task1/Data.txt).
+You can find input data files and input parsers code in [adventofcode-2021.Tests](./code/adventofcode-2021.Tests) project. To use your input data instead of mine, you should update the data file you can find in the same folder as a test runner. For example - [data file for the day one part one](./code/adventofcode-2021.Tests/Task1/Data.txt).
 
 
 |                                                | part 1                              | part 2                              |
@@ -42,3 +39,15 @@ You can find input data files and input parsers can in [adventofcode-2021.Tests]
 | day 23 | [solution](./code/adventofcode-2021/Task45/Task45.cs), [test runner](./code/adventofcode-2021.Tests/Task45/Task45Tests.cs) | [solution](./code/adventofcode-2021/Task45/Task45.cs), [test runner](./code/adventofcode-2021.Tests/Task45/Task45Tests.cs) |
 | day 24 | [solution](./code/adventofcode-2021/Task47/Task47.cs), [test runner](./code/adventofcode-2021.Tests/Task47/Task47Tests.cs) | [solution](./code/adventofcode-2021/Task47/Task47.cs), [test runner](./code/adventofcode-2021.Tests/Task47/Task47Tests.cs) |
 | day 25 | [solution](./code/adventofcode-2021/Task49/Task49.cs), [test runner](./code/adventofcode-2021.Tests/Task49/Task49Tests.cs) ||
+
+## How to run
+1) Install .Net Core 6.
+2) Clone my repository.
+3) Inside [code folder](./code) run in console
+
+    `dotnet test --filter "DisplayName~Task1_"`
+
+    *Task1_* should be replaced with task number you want to run.
+
+## My stats
+![main](https://raw.githubusercontent.com/flerka/adventofcode-2021/master/.github/img/1.png)
